@@ -47,3 +47,5 @@ const mapDispatchToProps = () =>{
 const connect = ReactRedux.connect;
 
 connect(mapStateToProps, mapDispatchToProps)(BookList);
+
+export default BookList;
