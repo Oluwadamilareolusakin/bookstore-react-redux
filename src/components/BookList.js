@@ -17,28 +17,22 @@ const BookList = (props) => {
       <tr>
         <th>Category</th>
       </tr>
-      {books.map(book, index => 
-        <Book book={book} key={index} />
-      )}
-      <tr></tr>
+      {books.map(book, (index) => <Book book={book} key={index} />)}
+      <tr />
     </table>
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    books: state,
-  }
-};
+const mapStateToProps = (state) => ({
+  books: state,
+});
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addNewBook: book => dispatch(addBook(book)),
-    deleteBook: index => dispatch(removeBook(index)),
-  };
-};
+const mapDispatchToProps = (dispatch) => ({
+  addNewBook: (book) => dispatch(addBook(book)),
+  deleteBook: (index) => dispatch(removeBook(index)),
+});
 
-const {connect} = ReactRedux;
+const { connect } = ReactRedux;
 
 connect(mapStateToProps, mapDispatchToProps)(BookList);
 

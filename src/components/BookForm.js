@@ -6,11 +6,11 @@ const BookForm = (props) => {
     <form>
       <input />
       <select>
-        {categories.map((category,index => <option key={index}>{category}</option>))}
+        {categories.map(category, index => <option key={index}>{category}</option>))}
       </select>
       <button type="submit">Add Book</button>
     </form>
-  )
-}
+  );
+};
 
 export default BookForm;
