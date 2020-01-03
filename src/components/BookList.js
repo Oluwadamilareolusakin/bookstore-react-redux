@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactRedux from 'react-redux';
+import Book from './Book';
+import addBook from '../actions/book';
 
 class BookList extends React.Component{
   constructor(props){
@@ -20,12 +22,8 @@ class BookList extends React.Component{
           <th>Category</th>
         </tr>
         {books.map(book => 
-          <tr>
-            <td>{book.id}</td>
-            <td>{book.title}</td>
-            <td>{book.category}</td>
-          </tr>
-          )}
+          <Book book={book}/>
+        )}
         <tr></tr>
       </table>
     )
@@ -36,13 +34,14 @@ const mapStateToProps = (state) => {
   return {
     books: state,
   }
-}
+};
 
-const mapDispatchToProps = () =>{
+const mapDispatchToProps = (dispatch) =>{
   return{
-
+    addNewBook: (book) => dispatch(addBook(book)),
+    deleteBook: (index) => dispatch(removeBook(index))
   }
-}
+};
 
 const connect = ReactRedux.connect;
 
