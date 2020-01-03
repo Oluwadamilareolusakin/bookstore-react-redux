@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactRedux from 'react-redux';
+import {Provider} from 'react-redux';
 import Redux from 'redux';
 import rootReducer from './reducers/index';
 import App from './components/App';
@@ -35,5 +35,5 @@ const state = [
 const store = Redux.createStore(rootReducer);
 
 <Provider store={store}>
-  <App/>
-</Provider>
+  <App />
+</Provider>;

@@ -1,14 +1,16 @@
 import React from 'react';
 
 const BookForm = (props) => {
-  const categories = ["Action", "Biography", "History", "Horror", "Kids", "Learning", "Sci-Fi"];
+  const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
   return (
     <form>
-      <input/>
+      <input />
       <select>
-        {categories.map((category => <option>{category}</option>))}
+        {categories.map((category,index => <option key={index}>{category}</option>))}
       </select>
-      <button></button>
+      <button type="submit">Add Book</button>
     </form>
   )
 }
+
+export default BookForm;
