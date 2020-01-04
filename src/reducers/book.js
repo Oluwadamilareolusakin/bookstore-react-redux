@@ -1,13 +1,41 @@
 const CREATE_BOOK = 'CREATE_BOOK';
 const REMOVE_BOOK = 'REMOVE_BOOK';
 
-const bookReducer = (state = [], action) => {
+const initialState = [
+  {
+    title: 'The first placeholder book',
+    category: 'Action',
+    id: 1,
+  },
+
+  {
+    title: 'The second placeholder book',
+    category: 'Action',
+    id: 2,
+  },
+
+  {
+    title: 'The third placeholder book',
+    category: 'Action',
+    id: 3,
+  },
+
+  {
+    title: 'The fourth placeholder book',
+    category: 'Action',
+    id: 4,
+  },
+
+];
+
+
+const bookReducer = (state = initialState, action) => {
   switch (action.type) {
     case CREATE_BOOK:
       return [...state, action.book];
     case REMOVE_BOOK:
-      const { targetBook } = action.book;
-      const newList = state.filter((book) => book !== targetBook);
+      const targetBook = action.book;
+      const newList = state.filter(book => book !== targetBook)
       return newList;
     default:
       return state;
