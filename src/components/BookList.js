@@ -12,17 +12,20 @@ class BookListComponent extends React.Component {
     const { books }  = this.props;
     return (
       <table>
-        <tr>
-          <th>Book Id</th>
-        </tr>
-        <tr>
-          <th>Title</th>
-        </tr>
-        <tr>
-          <th>Category</th>
-        </tr>
-        {books.map((book, index) => <Book book={book} key={index} handleRemoveBook={(event) => this.handleRemoveBook(event,book)}/>)}
-        <tr />
+        <thead className="row">
+          <tr>
+            <th>Book Id</th>
+          </tr>
+          <tr>
+            <th>Title</th>
+          </tr>
+          <tr>
+            <th>Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          {books.map((book, index) => <Book book={book} key={index} handleRemoveBook={(event) => this.handleRemoveBook(event,book)}/>)}
+        </tbody>
       </table>
     );
   }

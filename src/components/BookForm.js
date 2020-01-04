@@ -27,8 +27,6 @@ class BookForm extends React.Component {
 
   handleSubmit = (e, id) => {
     e.preventDefault();
-    console.log(id.length);
-
     const { title, category } = this.state;
 
     const book = {
@@ -47,7 +45,6 @@ class BookForm extends React.Component {
 
   render() {
     const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
-    const { id } = this.props
     return (
       <form>
         <input id="title" onChange={this.handleChange}/>
