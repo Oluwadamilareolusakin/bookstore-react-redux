@@ -3,9 +3,9 @@ const addBook = book => ({
   book,
 });
 
-const removeBook = index => ({
+const removeBook = book => ({
   type: 'REMOVE_BOOK',
-  index,
+  book,
 });
 
-export default { addBook, removeBook };
+module.exports = { addBook, removeBook };
