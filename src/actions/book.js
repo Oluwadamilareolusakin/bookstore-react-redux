@@ -1,9 +1,9 @@
-const addBook = (book) => ({
+const addBook = book => ({
   type: 'CREATE_BOOK',
   book,
 });
 
-const removeBook = (index) => ({
+const removeBook = index => ({
   type: 'REMOVE_BOOK',
   index,
 });
