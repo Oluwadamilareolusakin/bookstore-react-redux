@@ -1,39 +1,21 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import Redux from 'redux';
+import { createStore } from 'redux';
 import rootReducer from './reducers/index';
 import App from './components/App';
 
 
-const state = [
-  {
-    title: 'The first placeholder book',
-    category: 'Action',
-    id: 1,
-  },
+const store = createStore(rootReducer);
 
-  {
-    title: 'The second placeholder book',
-    category: 'Action',
-    id: 2,
-  },
+class AppWrapper extends React.Component{
+  render() {
+    return (
+      <Provider store={store}>
+        <App />
+      </Provider>
+    );
+  };
+};
 
-  {
-    title: 'The third placeholder book',
-    category: 'Action',
-    id: 3,
-  },
-
-  {
-    title: 'The fourth placeholder book',
-    category: 'Action',
-    id: 4,
-  },
-
-];
-
-const store = Redux.createStore(rootReducer);
-
-  <Provider store={store}>
-    <App />
-  </Provider>;
+ReactDOM.render(<AppWrapper/>, document.querySelector('#root'));
