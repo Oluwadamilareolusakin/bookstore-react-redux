@@ -7,24 +7,36 @@ const initialState = {
       title: 'The first placeholder book',
       category: 'Action',
       id: 1,
+      currentChapter: 0,
+      progress: 0,
+      author: "Some Random Dude"
     },
 
     {
       title: 'The second placeholder book',
       category: 'Action',
       id: 2,
+      currentChapter: 0,
+      progress: 0,
+      author: "Some Random Dude"
     },
 
     {
       title: 'The third placeholder book',
       category: 'Action',
       id: 3,
+      currentChapter: 0,
+      progress: 0,
+      author: "Some Random Dude"
     },
 
     {
       title: 'The fourth placeholder book',
       category: 'Action',
       id: 4,
+      currentChapter: 0,
+      progress: 0,
+      author: "Some Random Dude"
     },
 
   ]
