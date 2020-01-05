@@ -44,7 +44,7 @@ class BookForm extends React.Component {
   }
 
   render() {
-    const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
+    const { categories } = this.props;
     return (
       <form>
         <input id="title" onChange={this.handleChange}/>
@@ -58,11 +58,12 @@ class BookForm extends React.Component {
 };
 
 const mapStateToProps = (state) => {
-  const books = state.bookReducer;
+  const books = state.bookReducer.books;
   const lastBook = books[books.length - 1];
   const id = lastBook ? lastBook.id + 1 : 1;
   return {
-    id
+    id,
+    categories: state.filterReducer.categories,
   }
 }
 
