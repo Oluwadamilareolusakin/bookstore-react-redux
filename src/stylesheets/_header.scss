@@ -1,0 +1,36 @@
+@import './components';
+
+header{
+  width: 100%;
+  padding: 2em 5em;
+  background-color: white;
+  box-shadow: 0 0 5px .2px rgba(0, 0, 0, 0.328);
+  
+  nav{
+    width: 100%;
+    justify-content: space-between;
+
+    h3{
+      color: $primary-blue;
+      font-family: 'Permanent Marker', cursive;
+    }
+
+    .nav-left{
+      align-items: center;
+
+      a{
+        margin-left: 1em;
+      }
+    }
+
+    .nav-right{
+      font-family:  'Cute Font', cursive;
+      a{
+        margin-left: 1em;
+        text-decoration: none;
+        color: grey;
+        font-size: 1.5em;
+      }
+    }
+  }
+}

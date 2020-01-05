@@ -1,0 +1,70 @@
+@import './_components';
+
+
+.books{
+  padding: 0 8em 15em 8em;
+  
+  .book{
+    border: .5px solid rgba(194, 194, 194, 0.493);
+    margin: 2em 0;
+    padding: 2em 2em;
+    border-radius: 10px;
+  
+    
+    .book-left{
+      .book-category{
+        font-size: 1.2em;
+        color: grey;
+      }
+  
+      .book-title{
+        margin-top: .1em;
+        font-size: 2.5em;
+      }
+
+      .book-  author{
+        font-size: 1.4em;
+      }
+  
+      .book-controls{
+        margin-top: 1.8em;
+        a{
+          color: $primary-blue;
+          cursor: pointer;
+          transition: .5s;
+  
+          &:hover{
+            color: rgb(0, 135, 212);
+          }
+        }
+      }
+    }
+  
+    .book-right{
+      justify-content: space-between;
+      width: 40%;
+
+      .heading{
+        color: grey;
+        font-size: 1.2em;
+      }
+
+
+      .book-details{
+        .current-chapter{
+          font-size: 1.5em;
+        }
+        
+        button{
+          background-color: $primary-blue;
+          border: none;
+          color: white;
+          padding: .5em 1em;
+          font-size: 1.4em;
+          border-radius: 5px;
+          margin-top: 1em;
+        }
+      }
+    }
+  }
+}
