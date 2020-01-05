@@ -16,22 +16,9 @@ class BookListComponent extends Component {
     return (
       <Fragment>
         <CategoryFilter/> 
-        <table>
-          <thead className="row">
-            <tr>
-              <th>Book Id</th>
-            </tr>
-            <tr>
-              <th>Title</th>
-            </tr>
-            <tr>
-              <th>Category</th>
-            </tr>
-          </thead>
-          <tbody>
-            {books.map((book, index) => <Book book={book} key={index} handleRemoveBook={(event) => this.handleRemoveBook(event,book)}/>)}
-          </tbody>
-        </table>
+        <div className="books">
+          {books.map((book, index) => <Book book={book} key={index} handleRemoveBook={(event) => this.handleRemoveBook(event,book)}/>)}
+        </div>
       </Fragment>
     );
   }

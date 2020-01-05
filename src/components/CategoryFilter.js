@@ -9,9 +9,11 @@ const CategoryFilterComponent = (props) => {
   }
 
   return (
-    <select onChange={(event) => changeFilter(event)}>
-      {categories.map(category => <option>{category}</option>)}
-    </select>
+    <div className="category-filter row">
+      <select onChange={(event) => changeFilter(event)}>
+        {categories.map(category => <option>{category}</option>)}
+      </select>
+    </div>
   )
 }
 
