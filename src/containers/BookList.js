@@ -5,7 +5,8 @@ import { removeBook } from '../actions/book';
 
 const mapStateToProps = state => {
   return {
-    books: state.bookReducer,
+    books: state.bookReducer.books,
+    filter: state.filterReducer.currentCategory,
   }
 };
 
