@@ -8,4 +8,17 @@ const removeBook = book => ({
   book,
 });
 
-module.exports = { addBook, removeBook };
+const updateBook = (oldCopy, newCopy) => ({
+  type: "UPDATE_BOOK",
+  oldCopy,
+  newCopy,
+});
+
+const openBookModal = book => {
+  return {
+    type: 'OPEN_UPDATE_MODAL',
+    book
+  }
+}
+
+module.exports = { addBook, removeBook, updateBook, openBookModal };
