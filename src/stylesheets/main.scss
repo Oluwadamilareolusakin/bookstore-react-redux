@@ -3,7 +3,8 @@
 @import './header';
 @import './category_filter';
 @import './fontawesome/scss/fontawesome.scss';
-@import "./fontawesome/scss/solid.scss";
+@import './book_modal';
+@import './fontawesome/scss/solid.scss';
 
 *{
   margin: 0;
@@ -23,6 +24,10 @@
   border-radius: 5px;
 }
 
+body{
+  position: relative;
+}
+
 .heart{
   @extend %fa-icon;
   @extend .fas;
@@ -30,6 +35,15 @@
 
   &:before {
     content: fa-content($fa-var-heart);
+  }
+}
+
+.close{
+  @extend %fa-icon;
+  @extend .fas;
+
+  &:before{
+    content: fa-content($fa-var-times);
   }
 }
 
@@ -46,4 +60,8 @@
 .card{
   width: 100%;
   justify-content: space-between;
+}
+
+.open{
+  display: flex;
 }

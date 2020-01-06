@@ -30,6 +30,11 @@ header{
         text-decoration: none;
         color: grey;
         font-size: 1.5em;
+        transition: .5s;
+
+        &:hover{
+          color: rgb(175, 175, 175);
+        }
       }
     }
   }
