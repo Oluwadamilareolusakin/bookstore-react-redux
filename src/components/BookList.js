@@ -1,6 +1,6 @@
 import React from 'react';
 import { Component, Fragment } from 'react';
-import Book from './Book';
+import Book from '../containers/Book';
 import CategoryFilter from '../containers/CategoryFilter';
 
 class BookListComponent extends Component {  
@@ -17,7 +17,7 @@ class BookListComponent extends Component {
       <Fragment>
         <CategoryFilter/> 
         <div className="books">
-          {books.map((book, index) => <Book book={book} key={index} handleRemoveBook={(event) => this.handleRemoveBook(event,book)}/>)}
+          {books.map((book, index) => <Book book={book} key={index} handleRemoveBook={(event) => this.handleRemoveBook(event,book)} handleScroll={this.props.handleScroll}/>)}
         </div>
       </Fragment>
     );
