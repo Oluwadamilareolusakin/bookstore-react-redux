@@ -12,16 +12,16 @@ const BookListComponent = (props) => {
 
   let { books } = props;
   const { filter } = props;
-  books = filter === 'All' ? books : books.filter((book) => book.category === filter);
+  books = filter === 'All' ? books : books.filter(book => book.category === filter);
   return (
     <>
       <CategoryFilter />
       <div className="books">
-        {books.map((book) => (
+        {books.map(book => (
           <Book
             book={book}
             key={book.id}
-            handleRemoveBook={(event) => handleRemoveBook(event, book)}
+            handleRemoveBook={event => handleRemoveBook(event, book)}
             handleScroll={props.handleScroll}
           />
         ))}

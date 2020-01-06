@@ -104,9 +104,9 @@ class BookModalComponent extends Component {
         <input id="read" type="number" onChange={this.handleChange} placeholder="No. of pages read" value={pagesRead} />
         <input id="chapter" type="number" onChange={this.handleChange} placeholder="Current Chapter" value={currentChapter} />
         <select id="category" type="select" onChange={this.handleChange} name="Genre" value={category}>
-          {categories.map((category) => <option key={Math.random()}>{category}</option>)}
+          {categories.map(category => <option key={Math.random()}>{category}</option>)}
         </select>
-        <button type="submit" onClick={(event) => this.handleSubmit(event)}>Update Book</button>
+        <button type="submit" onClick={event => this.handleSubmit(event)}>Update Book</button>
       </form>
     );
   }

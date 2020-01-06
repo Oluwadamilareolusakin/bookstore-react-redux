@@ -1,7 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import PropType from 'prop-types';
-import { addBook } from '../actions/book';
 
 class BookFormComponent extends React.Component {
   constructor(props) {
@@ -81,9 +79,9 @@ class BookFormComponent extends React.Component {
             <input id="title" type="text" onChange={this.handleChange} placeholder="Book title" />
             <input id="author" type="text" onChange={this.handleChange} placeholder="Author" />
             <select id="category" type="select" onChange={this.handleChange} name="Genre">
-              {categories.map((category) => <option key={Math.random()}>{category}</option>)}
+              {categories.map(category => <option key={Math.random()}>{category}</option>)}
             </select>
-            <button type="submit" onClick={(event) => this.handleSubmit(event, id)}>Add Book</button>
+            <button type="submit" onClick={event => this.handleSubmit(event, id)}>Add Book</button>
           </form>
           <p className="signature">
 Written in React & Redux By Oluwadamilare Olusakin
