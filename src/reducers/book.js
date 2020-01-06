@@ -42,6 +42,7 @@ const bookReducer = (state = initialState, action) => {
       return Object.assign({}, state, {books: newList});
     default:
       return state;
+    }
   }
 };
 

@@ -1,40 +1,50 @@
 import React from 'react';
-import { Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
 import Book from './Book';
 import CategoryFilter from '../containers/CategoryFilter';
 
-class BookListComponent extends Component {  
-  handleRemoveBook = (event,book) => {
+const BookListComponent = (props) => {
+  const handleRemoveBook = (event, book) => {
     event.preventDefault();
-    const { deleteBook } = this.props;
+    const { deleteBook } = props;
     deleteBook(book);
-  }
+  };
 
-  render() {
-    let { books, filter }  = this.props;
-    books = filter === "All" ? books : books.filter(book => book.category === filter);
-    return (
-      <Fragment>
-        <CategoryFilter/> 
-        <table>
-          <thead className="row">
-            <tr>
-              <th>Book Id</th>
-            </tr>
-            <tr>
-              <th>Title</th>
-            </tr>
-            <tr>
-              <th>Category</th>
-            </tr>
-          </thead>
-          <tbody>
-            {books.map((book, index) => <Book book={book} key={index} handleRemoveBook={(event) => this.handleRemoveBook(event,book)}/>)}
-          </tbody>
-        </table>
-      </Fragment>
-    );
-  }
+  const { books } = props;
+  return (
+    <table>
+      <thead className="row">
+        <tr>
+          <th>Book Id</th>
+        </tr>
+        <tr>
+          <th>Title</th>
+        </tr>
+        <tr>
+          <th>Category</th>
+        </tr>
+      </thead>
+      <tbody>
+        {books.map((book) => (
+          <Book
+            book={book}
+            key={Math.random()}
+            handleRemoveBook={(event) => handleRemoveBook(event, book)}
+          />
+        ))}
+      </tbody>
+    </table>
+  );
+};
+
+BookListComponent.defaultProps = {
+  deleteBook() {},
+  books: [],
+};
+
+BookListComponent.propTypes = {
+  deleteBook: PropTypes.func,
+  books: PropTypes.arrayOf(PropTypes.oneOfType(Object)),
 };
 
 export default BookListComponent;

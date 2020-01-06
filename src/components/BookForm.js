@@ -1,18 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropType from 'prop-types';
 import { addBook } from '../actions/book';
 
-class BookForm extends React.Component {
-  constructor(props){
+class BookFormComponent extends React.Component {
+  constructor(props) {
     super(props);
     this.state = {
       title: '',
       category: '',
-    }
+    };
+
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange = (e) => {
-    if (e.target.id === 'title'){
+  handleChange(e) {
+    if (e.target.id === 'title') {
       const title = e.target.value;
       this.setState({
         title,
@@ -22,10 +25,10 @@ class BookForm extends React.Component {
     const category = e.target.value;
     this.setState({
       category,
-    })
+    });
   }
 
-  handleSubmit = (e, id) => {
+  handleSubmit(e, id) {
     e.preventDefault();
     const { title, category } = this.state;
 
@@ -33,28 +36,40 @@ class BookForm extends React.Component {
       title,
       category,
       id,
-    }
+    };
 
-    this.props.addNewBook(book);
+    const { addNewBook } = this.props;
+    addNewBook(book);
 
     this.setState({
       title: '',
       category: '',
-    })
+    });
   }
 
   render() {
-    const { categories } = this.props;
+    const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
+    const { id } = this.props;
     return (
       <form>
-        <input id="title" onChange={this.handleChange}/>
+        <input id="title" onChange={this.handleChange} />
         <select id="category" onChange={this.handleChange}>
-          {categories.map((category, index) => <option key={index}>{category}</option>)}
+          {categories.map((category) => <option key={Math.random()}>{category}</option>)}
         </select>
-        <button type="submit" onClick={(event) => this.handleSubmit(event, this.props.id)} >Add Book</button>
+        <button type="submit" onClick={(event) => this.handleSubmit(event, id)}>Add Book</button>
       </form>
     );
   }
+}
+
+BookFormComponent.defaultProps = {
+  addNewBook: () => {},
+  id: 1,
+};
+
+BookFormComponent.propTypes = {
+  addNewBook: PropType.func,
+  id: PropType.number,
 };
 
 const mapStateToProps = (state) => {
@@ -63,17 +78,21 @@ const mapStateToProps = (state) => {
   const id = lastBook ? lastBook.id + 1 : 1;
   return {
     id,
+<<<<<<< HEAD
     categories: state.filterReducer.categories,
   }
 }
 
+=======
+  };
+};
+>>>>>>> components
 
 
 const mapDispatchToProps = (dispatch) => ({
-  addNewBook: book => dispatch(addBook(book)),
+  addNewBook: (book) => dispatch(addBook(book)),
 });
 
-BookForm = connect(mapStateToProps, mapDispatchToProps)(BookForm);
+const BookForm = connect(mapStateToProps, mapDispatchToProps)(BookFormComponent);
 
-
-export default BookForm;
+module.exports = BookForm;

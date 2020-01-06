@@ -10,10 +10,10 @@ const mapStateToProps = state => {
   }
 };
 
-const mapDispatchToProps = dispatch => ({
-  deleteBook: book => dispatch(removeBook(book)),
+const mapDispatchToProps = (dispatch) => ({
+  deleteBook: (book) => dispatch(removeBook(book)),
 });
 
 const BookList = connect(mapStateToProps, mapDispatchToProps)(BookListComponent);
 
-export default BookList;
+module.exports = { BookList };

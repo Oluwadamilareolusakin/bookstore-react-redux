@@ -8,14 +8,10 @@ import App from './components/App';
 
 const store = createStore(rootReducer);
 
-class AppWrapper extends React.Component{
-  render() {
-    return (
-      <Provider store={store}>
-        <App />
-      </Provider>
-    );
-  };
-};
+const AppWrapper = () => (
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
 
-ReactDOM.render(<AppWrapper/>, document.querySelector('#root'));
+ReactDOM.render(<AppWrapper />, document.querySelector('#root'));
