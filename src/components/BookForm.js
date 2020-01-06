@@ -73,20 +73,14 @@ BookFormComponent.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-  const books = state.bookReducer.books;
+  const { books } = state.bookReducer;
   const lastBook = books[books.length - 1];
   const id = lastBook ? lastBook.id + 1 : 1;
   return {
     id,
-<<<<<<< HEAD
     categories: state.filterReducer.categories,
-  }
-}
-
-=======
   };
 };
->>>>>>> components
 
 
 const mapDispatchToProps = (dispatch) => ({

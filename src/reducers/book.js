@@ -27,25 +27,25 @@ const initialState = {
       id: 4,
     },
 
-  ]
+  ],
 };
 
 
 const bookReducer = (state = initialState, action) => {
   switch (action.type) {
     case CREATE_BOOK: {
-      return Object.assign({}, state, {books: [...state.books, action.book]});
-    };
+      return { ...state, books: [...state.books, action.book] };
+    }
     case REMOVE_BOOK: {
       const targetBook = action.book;
-      const books = state.books;
-      const newList = books.filter(book => book !== targetBook)
-      return Object.assign({}, state, {books: newList});
-    };
+      const { books } = state;
+      const newList = books.filter((book) => book !== targetBook);
+      return { ...state, books: newList };
+    }
     default: {
       return state;
-    };
-  };
+    }
+  }
 };
 
 export default bookReducer;

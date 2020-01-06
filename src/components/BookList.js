@@ -12,33 +12,37 @@ const BookListComponent = (props) => {
 
   const { books } = props;
   return (
-    <table>
-      <thead className="row">
-        <tr>
-          <th>Book Id</th>
-        </tr>
-        <tr>
-          <th>Title</th>
-        </tr>
-        <tr>
-          <th>Category</th>
-        </tr>
-      </thead>
-      <tbody>
-        {books.map((book) => (
-          <Book
-            book={book}
-            key={Math.random()}
-            handleRemoveBook={(event) => handleRemoveBook(event, book)}
-          />
-        ))}
-      </tbody>
-    </table>
+    <div>
+
+      <CategoryFilter />
+      <table>
+        <thead className="row">
+          <tr>
+            <th>Book Id</th>
+          </tr>
+          <tr>
+            <th>Title</th>
+          </tr>
+          <tr>
+            <th>Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          {books.map((book) => (
+            <Book
+              book={book}
+              key={Math.random()}
+              handleRemoveBook={(event) => handleRemoveBook(event, book)}
+            />
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 };
 
 BookListComponent.defaultProps = {
-  deleteBook() {},
+  deleteBook: () => {},
   books: [],
 };
 
