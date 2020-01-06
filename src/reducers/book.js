@@ -31,14 +31,17 @@ const initialState = [
 
 const bookReducer = (state = initialState, action) => {
   switch (action.type) {
-    case CREATE_BOOK:
+    case CREATE_BOOK: {
       return [...state, action.book];
-    case REMOVE_BOOK:
+    }
+    case REMOVE_BOOK: {
       const targetBook = action.book;
-      const newList = state.filter(book => book !== targetBook)
+      const newList = state.filter((book) => book !== targetBook);
       return newList;
-    default:
+    }
+    default: {
       return state;
+    }
   }
 };
 
