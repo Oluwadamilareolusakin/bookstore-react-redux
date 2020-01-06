@@ -1,8 +1,8 @@
 const CHANGE_FILTER = 'CHANGE_FILTER';
 
-const changeFilter = (option) => ({
+const ChangeFilter = (option) => ({
   type: CHANGE_FILTER,
   option,
 });
 
-export default changeFilter;
+export default ChangeFilter;

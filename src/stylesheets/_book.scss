@@ -28,10 +28,12 @@
   
       .book-controls{
         margin-top: 1.8em;
-        a{
+        button{
           color: $primary-blue;
           cursor: pointer;
           transition: .5s;
+          background: 0 0;
+          border: none;
   
           &:hover{
             color: rgb(0, 135, 212);

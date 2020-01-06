@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import CategoryFilterComponent from '../components/CategoryFilter';
-import changeFilter from '../actions/index';
+import ChangeFilter from '../actions/index';
 
 const mapStateToProps = (state) => {
   const { categories, currentCategory } = state.filterReducer;
@@ -11,9 +11,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  filterBooks: (option) => dispatch(changeFilter(option)),
+  filterBooks: (option) => dispatch(ChangeFilter(option)),
 });
 
-const CategoryFilter = connect(mapStateToProps, mapDispatchToProps)(CategoryFilterComponent);
-
-export default CategoryFilter;
+export default connect(mapStateToProps, mapDispatchToProps)(CategoryFilterComponent);

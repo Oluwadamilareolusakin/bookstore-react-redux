@@ -1,31 +1,44 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import * as BookList from '../containers/BookList';
-import * as BookForm from './BookForm';
 import Header from './Header';
+import BookForm from './BookForm';
+import BookModal from '../containers/BookModal';
+import BookList from '../containers/BookList';
 
 const AppComponent = (props) => {
-  
-  import BookModal from '../containers/BookModal';
-  return(
-  <div>
-    <div className="book-modal">
-      <i className="close" onClick={props.handleClick}></i>
-      {props.bookToUpdate && <BookModal handleModal={props.handleClick}/>}
-    </div>
-    <Header/>
-    <BookList handleScroll={props.handleClick}/>
-    <BookForm />
-  </div>
-);
+  const { handleClick, bookToUpdate } = props;
 
-const mapStateToProps = state => {
+  return (
+    <div>
+      <div className="book-modal">
+        <button onClick={handleClick} type="button">
+          <i className="close" />
+        </button>
+        {bookToUpdate && <BookModal handleModal={handleClick} />}
+      </div>
+      <Header />
+      <BookList handleScroll={handleClick} />
+      <BookForm />
+    </div>
+  );
+};
+
+const mapStateToProps = (state) => {
   const { bookToUpdate } = state.bookReducer;
   return {
     bookToUpdate,
-  }
-}
+  };
+};
 
-const App = connect(mapStateToProps)(AppComponent);
+AppComponent.defaultProps = {
+  bookToUpdate: {},
+  handleClick: () => {},
+};
 
-export default App;
+AppComponent.propTypes = {
+  bookToUpdate: PropTypes.arrayOf(PropTypes.oneOfType(Object)),
+  handleClick: PropTypes.func,
+};
+
+export default connect(mapStateToProps)(AppComponent);
