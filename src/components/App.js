@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Header from './Header';
-import BookForm from './BookForm';
+import BookForm from '../containers/BookForm';
 import BookModal from '../containers/BookModal';
 import BookList from '../containers/BookList';
 
