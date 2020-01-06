@@ -1,7 +1,13 @@
 import React from 'react';
 
-const Book = (props) => {
-  const { book, key, handleRemoveBook } = props;
+const BookComponent = (props) => {
+  const { book, key, handleRemoveBook, openModal } = props;
+
+  const openBookModal = book => {
+    props.openModal(book);
+    document.querySelector('.book-modal').classList.toggle('open');
+    document.addEventListener('scroll', props.handleScroll)
+  }
   
   return (
     <div key={key} className="book card row">
@@ -20,16 +26,17 @@ const Book = (props) => {
           <h5 className="heading">Progress</h5>
           <div>
             <h1 className="progress">{book.progress}%</h1>
+            <h3>Completed</h3>
           </div>
         </div>
         <div className="book-details">
           <h5 className="heading">Current Chapter</h5>
           <p className="current-chapter">Chapter {book.currentChapter}</p>
-          <button>UPDATE PROGRESS</button>
+          <button onClick={() => openBookModal(book)}>UPDATE PROGRESS</button>
         </div>
       </div>
     </div>
   );
 };
 
-export default Book;
+export default BookComponent;
