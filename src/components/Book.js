@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const BookComponent = (props) => {
   const { book, key, handleRemoveBook, openModal } = props;
@@ -37,6 +38,18 @@ const BookComponent = (props) => {
       </div>
     </div>
   );
+};
+
+BookComponent.defaultProps = {
+  book: {},
+  handleRemoveBook: () => {},
+  key: 1,
+};
+
+BookComponent.propTypes = {
+  book: PropTypes.arrayOf(PropTypes.oneOfType(Object)),
+  handleRemoveBook: PropTypes.func,
+  key: PropTypes.number,
 };
 
 export default BookComponent;

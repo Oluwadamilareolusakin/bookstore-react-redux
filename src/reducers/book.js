@@ -49,7 +49,7 @@ const bookReducer = (state = initialState, action) => {
   switch (action.type) {
     case CREATE_BOOK:
       return Object.assign({}, state, {books: [...state.books, action.book]});
-    case UPDATE_BOOK:
+    case UPDATE_BOOK: {
       let { oldCopy, newCopy } = action;
       const originalList = state.books;
       let updatedList = originalList.map((book) => {
@@ -59,15 +59,22 @@ const bookReducer = (state = initialState, action) => {
         return book;
       });
       return Object.assign({}, state, {books: updatedList}, {bookToUpdate: null});
-    case OPEN_UPDATE_MODAL:
+    }
+
+    case OPEN_UPDATE_MODAL: {
       return Object.assign({}, state, {bookToUpdate: action.book});
-    case REMOVE_BOOK:
+    }
+    
+    case REMOVE_BOOK: {
       const targetBook = action.book;
       const { books } = state;
       const newList = books.filter(book => book !== targetBook)
       return Object.assign({}, state, {books: newList});
-    default:
+    }
+    default: {
       return state;
+    }
+    }
   }
 };
 

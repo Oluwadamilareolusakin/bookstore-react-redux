@@ -9,22 +9,20 @@ import './stylesheets/main.scss';
 
 const store = createStore(rootReducer);
 
-class AppWrapper extends React.Component{
+const AppWrapper = () => {
 
-  closeModal = () => {
+  const closeModal = () => {
     const modal = document.querySelector('.open');
     if (modal) {
       modal.classList.toggle('open');
     }  
   }
 
-  render() {
-    return (
-      <Provider store={store}>
-        <App handleClick={this.closeModal}/>
-      </Provider>
-    );
-  };
+  return (
+    <Provider store={store}>
+      <App handleClick={closeModal}/>
+    </Provider>
+  );
 };
 
-ReactDOM.render(<AppWrapper/>, document.querySelector('#root'));
+ReactDOM.render(<AppWrapper />, document.querySelector('#root'));

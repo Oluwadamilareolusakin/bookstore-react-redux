@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import BookList from '../containers/BookList';
-import BookForm from './BookForm';
+import * as BookList from '../containers/BookList';
+import * as BookForm from './BookForm';
 import Header from './Header';
-import BookModal from '../containers/BookModal';
 
 const AppComponent = (props) => {
-
+  
+  import BookModal from '../containers/BookModal';
   return(
   <div>
     <div className="book-modal">
@@ -17,8 +17,7 @@ const AppComponent = (props) => {
     <BookList handleScroll={props.handleClick}/>
     <BookForm />
   </div>
-  )
-};
+);
 
 const mapStateToProps = state => {
   const { bookToUpdate } = state.bookReducer;
