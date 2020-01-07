@@ -3,13 +3,13 @@ import BookListComponent from '../components/BookList';
 import { removeBook } from '../actions/book';
 
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   books: state.bookReducer.books,
   filter: state.filterReducer.currentCategory,
 });
 
-const mapDispatchToProps = dispatch => ({
-  deleteBook: book => dispatch(removeBook(book)),
+const mapDispatchToProps = (dispatch) => ({
+  deleteBook: (book) => dispatch(removeBook(book)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookListComponent);

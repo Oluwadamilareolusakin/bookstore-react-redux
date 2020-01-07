@@ -13,8 +13,8 @@ const mapStateToProps = (state) => {
 };
 
 
-const mapDispatchToProps = dispatch => ({
-  addNewBook: book => dispatch(addBook(book)),
+const mapDispatchToProps = (dispatch) => ({
+  addNewBook: (book) => dispatch(addBook(book)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookFormComponent);
