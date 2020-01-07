@@ -1,0 +1,38 @@
+@import './components';
+
+.book-modal{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(12, 12, 12, 0.575);
+  z-index: 2;
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  .close{
+    position: absolute;
+    top: 1em;
+    right: 3em;
+    font-size: 2em;
+    color: $primary-blue;
+    cursor: pointer;
+  }
+
+  form{
+    width: 50%;
+
+    input, button, select{
+      width: 100%;
+      margin-bottom: 1em;
+      padding: .5em;
+      background-color: rgb(235, 235, 235);
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2em;
+    }
+  }
+}
