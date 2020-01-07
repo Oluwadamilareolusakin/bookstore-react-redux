@@ -1,0 +1,67 @@
+@import './book';
+@import './book_form';
+@import './header';
+@import './category_filter';
+@import './fontawesome/scss/fontawesome.scss';
+@import './book_modal';
+@import './fontawesome/scss/solid.scss';
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family:  'Cute Font', cursive;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar{
+  width: 5px;
+  background-color: white;
+}
+
+::-webkit-scrollbar-thumb{
+  width: 5px;
+  background-color: grey;
+  border-radius: 5px;
+}
+
+body{
+  position: relative;
+}
+
+.heart{
+  @extend %fa-icon;
+  @extend .fas;
+  color: rgb(255, 30, 0);
+
+  &:before {
+    content: fa-content($fa-var-heart);
+  }
+}
+
+.close{
+  @extend %fa-icon;
+  @extend .fas;
+
+  &:before{
+    content: fa-content($fa-var-times);
+  }
+}
+
+.row{
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.column{
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.card{
+  width: 100%;
+  justify-content: space-between;
+}
+
+.open{
+  display: flex;
+}

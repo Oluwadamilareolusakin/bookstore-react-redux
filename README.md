@@ -1,8 +1,6 @@
 # bookstore-react-redux
 An app that allows you manage an inventory of books
 
-
-
 # What it does
 It is the frontend of a page that allows you contact or book a photographer's time.
 
