@@ -12,8 +12,8 @@ const CategoryFilterComponent = (props) => {
 
   return (
     <div className="category-filter row">
-      <select onChange={event => changeFilter(event)}>
-        {categories.map(category => <option key={index + 1}>{category}</option>)}
+      <select onChange={(event) => changeFilter(event)}>
+        {categories.map((category) => <option key={index + 1}>{category}</option>)}
       </select>
     </div>
   );

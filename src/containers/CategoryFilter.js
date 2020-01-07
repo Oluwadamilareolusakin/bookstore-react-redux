@@ -10,8 +10,8 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = dispatch => ({
-  filterBooks: option => dispatch(ChangeFilter(option)),
+const mapDispatchToProps = (dispatch) => ({
+  filterBooks: (option) => dispatch(ChangeFilter(option)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CategoryFilterComponent);

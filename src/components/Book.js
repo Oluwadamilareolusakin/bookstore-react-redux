@@ -24,7 +24,7 @@ By
           </div>
         </div>
         <div className="book-controls">
-          <button onClick={event => handleRemoveBook(event, book)} type="button">Remove</button>
+          <button onClick={(event) => handleRemoveBook(event, book)} type="button">Remove</button>
         </div>
       </div>
       <div className="book-right row">
