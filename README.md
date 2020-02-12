@@ -1,18 +1,21 @@
 # bookstore-react-redux
-An app that allows you manage an inventory of books
+An app that allows you manage books you're reading and keep track of your progress through said books!
+
+![screenshot](https://images2.imgbox.com/5b/97/lbZWSChN_o.png)
+
 
 # What it does
-It is the frontend of a page that allows you contact or book a photographer's time.
+Ever need to manage and keep track of the books you're reading? Well you can, simply add a book to the app, and update the progress as you get through the book!
+
+## Live Demo
+
+[Live Demo](http://nerdcamp-io.herokuapp.com/)
 
 ## Built With
 - JS(ES6)
 - ReactJS
 - SCSS
 #### and deployed to Heroku
-
-## Live Demo
-
-[Live Demo](http://nerdcamp-io.herokuapp.com/)
 
 ## Getting Started
 
