@@ -12,7 +12,7 @@ It is the frontend of a page that allows you contact or book a photographer's ti
 
 ## Live Demo
 
-[Live Demo](https://peexoo-calendar.herokuapp.com)
+[Live Demo](http://nerdcamp-io.herokuapp.com/)
 
 ## Getting Started
 
